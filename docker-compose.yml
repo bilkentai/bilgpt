@@ -1,0 +1,55 @@
+services:
+  whatsapp-ai-bot:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: whatsapp-ai-bot
+    volumes:
+      - ./src:/usr/src/app/src
+      - ./.env:/usr/src/app/.env
+      - whatsapp-auth:/usr/src/app/.wwebjs_auth
+      - whatsapp-cache:/usr/src/app/.wwebjs_cache
+      - critics-data:/usr/src/app/critics
+      - app-data:/usr/src/app/data
+    environment:
+      - NODE_ENV=production
+      - ADMIN_NUMBER=${ADMIN_NUMBER}
+      - OPENAI_API_KEY=${OPENAI_API_KEY}
+      - PUPPETEER_SKIP_CHROMIUM_DOWNLOAD=true
+      - PUPPETEER_EXECUTABLE_PATH=/usr/bin/google-chrome
+      - CHROME_BIN=/usr/bin/google-chrome
+    restart: "on-failure:3"
+    ports:
+      - "3453:3000"
+    cap_add:
+      - SYS_ADMIN
+    security_opt:
+      - seccomp=unconfined
+    shm_size: '2gb'
+    init: true
+    stop_grace_period: 30s
+    stop_signal: SIGINT
+    deploy:
+      resources:
+        limits:
+          cpus: '2.0'
+          memory: 2G
+        reservations:
+          cpus: '0.5'
+          memory: 512M
+    healthcheck:
+      test: ["CMD", "node", "-e", "require('http').get('http://localhost:3000/health', res => console.log(res.statusCode))"]
+      interval: 1m
+      timeout: 10s
+      retries: 3
+      start_period: 30s
+
+volumes:
+  whatsapp-auth:
+    name: whatsapp-ai-bot-auth
+  whatsapp-cache:
+    name: whatsapp-ai-bot-cache
+  critics-data:
+    name: whatsapp-ai-bot-critics
+  app-data:
+    name: whatsapp-ai-bot-data 
