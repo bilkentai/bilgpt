@@ -20,18 +20,12 @@ BilGPT is an intelligent WhatsApp bot developed by Bilkent AI Society that combi
 
 Bilkent AI Society is a dynamic community at Bilkent University that brings together students passionate about artificial intelligence. In our first year, we've achieved remarkable milestones including:
 
-- Hosting distinguished guests from leading tech companies:
-  - OpenAI
-  - Microsoft
-  - NVIDIA
-  - Meta
-  - Google
-  - Cohere
-  - And more!
-- Being accepted into NVIDIA's AI Student Network and Notion Student Organizations
-- Achieving first place in Amazon's project competition
-- Contributing to global AI initiatives like Cohere For AI's Aya project
-- Organizing major events including Bilkent Philfest'23
+- Hosting distinguished guests from leading tech companies, including OpenAI, Microsoft, NVIDIA, Meta, Google, and more!  
+- Being accepted into NVIDIA's AI Student Network and Notion Student Organizations.  
+- Achieving first place in Amazon's project competition.  
+- Organizing a huge event with Global Turks AI, inviting 13 alumni from top companies and institutions.  
+- Contributing to global AI initiatives, such as Cohere For AI's Aya project.  
+- Organizing major events, including Bilkent Philfest'23.
 
 **Learn more:** [ais.bilkent.edu.tr](https://ais.bilkent.edu.tr)
 
