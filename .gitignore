@@ -4,10 +4,10 @@
 /auth_data
 
 # src (under development)
-src/**/*.js
-src/**/*.ts
-src/**/*.json
-src/**/*.md
+# src/**/*.js
+# src/**/*.ts
+# src/**/*.json
+# src/**/*.md
 !src/README.md
 !src/*/README.md
 
