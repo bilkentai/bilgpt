@@ -1,4 +1,4 @@
-# BilGPT - Bilkent AI Society's WhatsApp Bot
+# BilGPT - Bilkent AI Society's AI Agent
 
 [![License: AGPL v3](https://img.shields.io/badge/License-AGPL%20v3-blue.svg)](https://www.gnu.org/licenses/agpl-3.0)
 [![Version](https://img.shields.io/badge/version-1.0.0-green.svg)](https://github.com/bilkentai/bilgpt/releases)
