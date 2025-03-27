@@ -95,15 +95,11 @@ export async function handleUrlMessage(message, url) {
                 // Remove the summary from the criticism to avoid duplication
                 // Look for common summary patterns and remove them
                 let fullCriticism = result.criticism;
-                const summaryPatterns = [
-                    /^Özet:.*?\n\n/si,
-                    /^Summary:.*?\n\n/si,
-                    /^Özet .*?\n\n/si,
-                    /^Summary .*?\n\n/si
-                ];
-                
-                for (const pattern of summaryPatterns) {
-                    fullCriticism = fullCriticism.replace(pattern, '');
+                // Remove the summary section from the full criticism to avoid duplication,
+                // but preserve the summary text in the initial message
+                const summaryText = result.summary;
+                if (summaryText && fullCriticism.includes(summaryText)) {
+                    fullCriticism = fullCriticism.replace(summaryText, '').trim();
                 }
                 
                 // Then send the detailed criticism (without the summary)
